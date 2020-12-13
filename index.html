@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/wait.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/jump.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>BestCoffee</title>
+</head>
+<body>
+    <div id="app" class="wrap">
+        <!-- header start -->
+        <header class="header">
+            <div class="logo wow fadeInDown"><a href="index.html"><img src="./image/Coffee_one.svg"></a></div>
+            <nav class="navbar">
+                <input type="checkbox" name="" id="menu-check" v-model="jump">
+                <label for="menu-check"></label>
+                <div class="black"></div>
+                <ul class="menu" :class="{'move': jump}" id="menu">
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="Story.html" data-hovertext="Story">{{story}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" data-hovertext="Dessert">{{dessert}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" data-hovertext="knowledge">{{know}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" data-hovertext="About us">{{about}}</a></li>
+                    <div class="share">
+                        <span class="icon"><img src="image/facebook.svg" alt="FB"></span>
+                        <span class="icon"><img src="image/twitter.svg" alt="twitter"></span>
+                        <span class="icon"><img src="image/line.svg" alt="line"></span>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <!-- header end -->
+        
+        <!-- bg start -->
+        <section class="storyTitle">
+            <div class="textbox">
+                <h3>{{coffee}}</p>
+                <div class="abc">
+                    <figure><img src="image/beans.png" alt="beans"></figure>
+                    <p>{{address}}</p>
+                </div>
+                 <div class="abc">
+                    <figure><img src="image/beans.png" alt="beans"></figure>
+                    <p>{{tel}}</p>
+                </div>
+                 <div class="abc">
+                    <figure><img src="image/beans.png" alt="beans"></figure>
+                    <p>{{time}}</p>
+                </div>
+            </div>
+        </section>
+        <!-- bg end -->
+
+        <!-- about start -->
+        <section class="bsTitle">
+            <h2 class="about">
+                <em>{{aboutus}}</em>
+                <strong>{{best}}</strong>
+            </h2>
+            <p>{{info}}</p>
+            <div class="about_pic">
+                <div class="wow fadeInUp">
+                    <figure>
+                        <img src="image/coffee/hall2.png" alt="picture">
+                    </figure>
+                </div>
+                <div class="wow fadeInUp">
+                    <figure>
+                        <img src="image/coffee/hall4.jpg" alt="picture">
+                    </figure>
+                </div>
+                <div class="wow fadeInUp">
+                    <figure>
+                        <img src="image/coffee/hall3.png" alt="picture">
+                    </figure>
+                </div>
+                <div class="wow fadeInUp">
+                    <figure>
+                        <img src="image/coffee/hall.png" alt="picture">
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- about end -->
+
+        <!-- product start -->
+        <section class="product">
+            <h2 class="feature">
+                <em>{{feature}}</em>
+                <strong>{{product}}</strong>
+            </h2>
+            <h4 class="prod_name">咖啡</h4>
+            <div class="prod_box">
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg.png" alt="beans"></div>
+                    <figure>
+                        <img src="image/product/wineCoffee/chocolate.png" alt="chocolate">
+                    </figure>
+                    <h3>奶酒可可</h3>
+                    <p>Liqueur Chocolate</p>
+                </div>
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg.png" alt="beans"></div>
+                    <figure>
+                        <img src="image/product/wineCoffee/latte.png" alt="latte">
+                    </figure>
+                    <h3>奶酒拿鐵</h3>
+                    <p>Liqueur Latte</p>
+                </div>
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg.png" alt="beans"></div>
+                    <figure>
+                        <img src="image/product/coffee/Cappuccino.png" alt="Cappuccino">
+                    </figure>
+                    <h3>杏仁醇品拿鐵</h3>
+                    <p>almond</p>
+                </div>
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg.png" alt="beans"></div>
+                    <figure>
+                        <img src="image/product/wineCoffee/whiskyIce.png" alt="whiskyIce">
+                    </figure>
+                    <h3>馥郁冰淇淋</h3>
+                    <p>whisky Ice</p>
+                </div>
+            </div>
+
+            <h4 class="prod_name prod_name2">點心</h4>
+            <div class="prod_box prod_box2">
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg2.png" alt="tableware"></div>
+                    <figure>
+                        <img src="image/product/breakfast/toast.png">
+                    </figure>
+                    <h3>焗烤厚片</h3>
+                    <p>Cheese Toast</p>
+                </div>
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg2.png" alt="tableware"></div>
+                    <figure>
+                        <img src="image/product/breakfast/chicken.png" alt="chicken">
+                    </figure>
+                    <h3>烤雞總匯三明治</h3>
+                    <p>Chicken Sandwich</p>
+                </div>
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg2.png" alt="tableware"></div>
+                    <figure>
+                        <img src="image/product/breakfast/salad.png" alt="salad">
+                    </figure>
+                    <h3>照燒豬肉溫沙拉</h3>
+                    <p>Taliyaki Salad</p>
+                </div>
+                <div class="item wow fadeInUp">
+                    <div><img src="image/product/bg2.png" alt="tableware"></div>
+                    <figure>
+                        <img src="image/product/breakfast/waffle.png" alt="waffle">
+                    </figure>
+                    <h3>比利時鬆餅</h3>
+                    <p>Belqian Waffle</p>
+                </div>
+                <span></span>
+            </div>
+        </section>
+        <!-- product end -->
+
+        <!-- knowledge start -->
+        <section class="knowledge">
+            <h2 class="know">
+                <em>{{Knowledge}}</em>
+                <strong>{{know}}</strong>
+            </h2>
+            <div class="know_box">
+                <figure>
+                    <img src="image/banner/banner12.jpg" alt="coffee">
+                </figure>
+                <div class="baking">
+                    <div class="text">
+                        <h2>{{baking}}</h2>
+                        <h3>{{aroma}}</h3>
+                        <p>{{text}}</p>
+                        <button class="wow wobble"><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html">More</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- knowledge end -->
+
+        <!-- contact start -->
+        <section class="contact">
+            <h2 class="con">
+                <em>{{contact}}</em>
+                <strong>{{us}}</strong>
+            </h2>
+            <div class="con_box">
+                <div class="content">
+                    <h2>聯絡貝斯特</h2>
+                    <p class="text">因為有相同的喜好與執著，所以我們相遇</p>
+                    <p>來到這裡，希望提供您片刻的享受，然後持續下去</p>
+                    <button class="wow wobble"><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html">More</a></button>
+                </div>
+            </div>
+        </section>
+        <!-- contact end -->
+
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="ftBox_one">
+                <div class="flogo"><a href="index.html"><img src="image/Coffee_one.svg" alt="CoffeeSVG"></a></div>
+                <div class="social">
+                    <span class="icon"><a @click.prevent="" href=""><img src="image/ft_facebook.svg" alt="footerFB"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_twitter.svg" alt="footerTW"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_line.svg" alt="footerLine"></a></span>
+                </div>
+            </div>
+
+            <div class="ftBox_two">
+                <div class="fTitle">
+                    <ul :class="{'move': jump}" id="menu">
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="story.html">{{story}}</a></li>
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html">{{dessert}}</a></li>
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html">{{know}}</a></li>
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html">{{about}}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="terms">
+                    <ul>
+                        <li><a @click.prevent="" href="">{{terms}}</a></li>
+                        <li><a @click.prevent="" href="">{{privacy}}</a></li>
+                        <li>{{Best}}</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+       
+        <!-- coffeeAnimeted start -->
+        <div class="cover">
+            <div class="mask">
+                <div class="bottle">
+                    <div class="juice"></div>
+                    <div class="coffee"></div>
+                </div>
+            </div> 
+        </div>
+       
+        <div class="triangleBox" :class="{'jumpTo': isTransform}">
+            <div class="triangle tri1"></div>
+            <div class="triangle tri2"></div>
+            <div class="triangle tri3"></div>
+            <div class="triangle tri4"></div>
+            <div class="triangle tri5"></div>
+            <div class="triangle tri6"></div>
+            <div class="triangle tri7"></div>
+            <div class="triangle tri8"></div>
+            <div class="triangle tri9"></div>
+            <div class="triangle tri10"></div>
+            <div class="triangle tri11"></div>
+            <div class="triangle tri12"></div>
+            <div class="triangle tri13"></div>
+            <div class="triangle tri14"></div>
+            <div class="triangle tri15"></div>
+            <div class="triangle tri16"></div>
+            <div class="triangle tri17"></div>
+            <div class="triangle tri18"></div>
+        </div>
+        <!-- coffeeAnimeted end -->
+    </div>
+    
+    <div id="gotop"><i class="fas fa-arrow-alt-circle-up"></i></div>
+   
+    
+<script src="js/vue.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        story: '品牌故事',
+        dessert: '店內餐點',
+        know: '咖啡知識',
+        about: '聯絡我們',
+        coffee: '咖啡，是豐沃土壤的產物，孕育著美好',
+        address: '地址 : 桃園市中壢區中大路300號',
+        tel: '電話 : 03-425-7387',
+        time: '營業時間 : 平日 : 1100-2130 / 假日 : 1100-2200',
+        aboutus: 'About Us',
+        best: '關於貝斯特',
+        info: '咖啡，是生活中對自己的犒賞，更代表了個人品味的象徵',
+        feature: 'Feature Product',
+        product: '新品上市',
+        Knowledge: 'Knowledge',
+        baking: '咖啡的香氣',
+        aroma: '來自咖啡的烘焙',
+        text: '咖啡的香氣和味道，是在烘焙後才產生的。在烘焙過程中，咖啡生豆的水分慢慢釋放，重量減輕，顏色加深，體積膨脹，含有香氣的油脂慢慢釋放出來。',
+        contact: 'Contact',
+        us: '聯絡我們',
+        terms: '網站使用條款',
+        privacy: '隱私權政策',
+        Best: '©2019 Best All Rights Reserved.',
+        isTransform: false,
+        jump: false,
+    },
+    methods:{
+        jumper(e){
+          var jump = e.target.getAttribute('href');
+          console.log(jump);
+          setTimeout(function(){
+            document.location.href = jump;
+          },1000);
+        }
+    }
+
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/knowledge.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="./css/jump.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Knowledge</title>
+</head>
+<body>
+    <div id="app" class="wrap">
+        <!-- header start -->
+        <header class="header">
+            <div class="logo wow fadeInDown"><a href="index.html"><img src="./image/Coffee_one.svg" alt="CoffeeSVG"></a></div>
+            <nav class="navbar">
+                <input type="checkbox" name="" id="menu-check" v-model="jump">
+                <label for="menu-check"></label>
+                <div class="black"></div>
+                <ul class="menu" :class="{'move': jump}" id="menu">
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="Story.html" data-hovertext="Story">{{story}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" data-hovertext="Dessert">{{dessert}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" data-hovertext="knowledge">{{know}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" data-hovertext="About us">{{about}}</a></li>
+                    <div class="share">
+                        <span class="icon"><img src="image/facebook.svg" alt="FB"></span>
+                        <span class="icon"><img src="image/twitter.svg" alt="twitter"></span>
+                        <span class="icon"><img src="image/line.svg" alt="Line"></span>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <!-- header end -->
+        
+        <!-- bg start -->
+        <section class="bg">
+            <figure>
+                <img src="image/banner/banner17.jpg" alt="story">
+            </figure>
+        </section>
+        <!-- bg end -->
+        
+        <!-- main start -->
+        <section>
+            <div class="news">
+                <div>
+                    <h3>最新優惠 News</h3>
+                     <marquee scrollamount="3" onMouseOver="this.stop()" onMouseOut="this.start()">咖啡界的女神飲品 - 奶酒拿鐵</marquee>
+                </div>
+            </div>
+            <div class="mainArea">
+                <div class="mainBox">
+                    <h1 class="know">{{know}}</h1>
+                    <p>咖啡豆的風味受到產地、栽種、處理、包裝、烘焙等過程之影響，怎麼挑選品質好的咖啡豆，以及怎麼辨別出你可能會喜歡的味道呢？那得先從認識咖啡豆開始。</p>
+                    <div class="content">
+                        <div class="contBox">
+                            <h2 class="title">1.咖啡豆的產地</h2>
+                            <div class="item even">
+                                <div class="know_pic">
+                                    <figure><img class="wow rotateInUpLeft" src="image/land/land.jpg" alt="land"></figure>
+                                </div>
+                                <div class="know_txt">
+                                    <p>咖啡老行家都知道：喝酒看年份，喝咖啡看產地。產地的土壤、氣候、海拔高度都是形塑咖啡味道最根本的元素。不同產地種出的咖啡，味道自然大大不同。以下我們為你整理了幾個主要產地的咖啡味道特色：</p>
+                                    <p>巴西：大部分產羅布斯塔，口感濃烈，有巧克力餘味。大賣場的咖啡產品通常來自巴西。</p>
+                                    <p>中美洲、哥倫比亞：味道比較淡，平衡度好，低酸度，餘味有果香。在美國比較流行。</p>
+                                    <p>印尼：有泥土芳香或煙熏味，有苦可可餘味，醇度厚實。</p>
+                                    <p>衣索比亞：咖啡原產地，種類多樣性高。許多被形容有糖漿味，並有草莓或藍莓的餘味。</p>
+                                    <p>肯亞：味道厚實，有點番茄酸味。</p>
+                                    <p>夏威夷：帶甜香、溫和、香醇、柔潤。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contBox">
+                            <h2 class="title">2.咖啡豆的栽植與處理過程</h2>
+                            <div class="item">
+                                <div class="know_pic">
+                                    <figure><img class="wow rotateInUpRight" src="image/coffee/beans5.jpg" alt="beans"></figure>
+                                </div>
+                                <div class="know_txt">
+                                    <p>除了產地之外，咖啡豆栽植的方法（是否蔭下栽種、有機栽培、施肥），以及咖啡豆的採摘過程（農場工人的工作條件是否能讓他們有良好工作品質）也都影響了咖啡的味道。好的咖啡樹也有可能產出不好的豆子。</p>
+                                    <p>咖啡豆採收後的處理過程也很重要，常見的有日曬、水洗、蜜處理等三種後製處理方式。日曬的咖啡豆果香豐富、餘味甜、醇度高。水洗的咖啡豆帶有果香或花香、酸度適中、醇度較低。蜜處理的咖啡豆餘味則更甜、水果香細膩、醇度高。</p>
+                                    <p>目前國際有一些依咖啡豆大小顆粒、後製處理好壞、種植海拔標高的各種分級方式，也可以藉此判斷咖啡豆的品質高低。另外，有些咖啡包裝上會有公平貿易、永續經營、有機栽培、高海拔等證明標籤，有這些標籤的咖啡豆品質大部份都不差。雖然有些證明可能跟品質沒有直接關係，但表示這些咖啡豆是經過仔細處理的。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contBox">
+                            <h2 class="title">3.咖啡生豆的保存</h2>
+                            <div class="item even">
+                                <div class="know_pic">
+                                    <figure><img class="wow rotateInUpLeft" src="image/coffee/beans6.jpg" alt="save"></figure>
+                                </div>
+                                <div class="know_txt">
+                                    <p>咖啡生豆在還沒烘焙前非常穩定，條件好的情況下可以保存一年。但如果放在濕度高的地方，就有可能會產生細菌，咖啡豆也會沾染空氣裡不好的味道。</p>
+                                    <p>值得一提的是，所謂陳年老豆（aged）是指被存放在原產地的低濕度高海拔環境，定期翻動保鮮，培養出特別香醇口感的咖啡豆。這種咖啡豆的味道很好，但也很貴。放在一般倉庫裡囤積的咖啡豆可不是陳年老豆，不要被騙了。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contBox">
+                            <h2 class="title">4.咖啡的烘焙</h2>
+                            <div class="item">
+                                <div class="know_pic">
+                                    <figure><img class="wow rotateInUpRight" src="image/coffee/beans8.jpg" alt="baking"></figure>
+                                </div>
+                                <div class="know_txt">
+                                    <p>豆子烘烤的時間，會影響外觀和味道。最簡單的判斷方式是，豆子烘烤的時間越長，酸味越淡，咖啡因含量也越少。以下簡單列出不同烘焙時間會產生的咖啡風味，提供參考。</p>
+                                    <p>極淺焙（light roast）：有濃厚的青草味，香氣不足，很少用來品嚐。</p>
+                                    <p>淺焙（cinnamon roast）：酸度高，略帶香氣，常用來沖美式咖啡。</p>
+                                    <p>中焙（medium roast）：口感偏酸帶苦，香氣適中，保留咖啡豆的原始風味，常用來做美式咖啡或混合咖啡。</p>
+                                    <p>中深焙（high roast）：口感層次豐富、酸苦均衡且略帶甜味，香氣風味都好。</p>
+                                    <p>城市烘焙（city roast）：比中深焙的酸度低一些，完美展現咖啡的風味，是標準的烘焙程度，最受一般大眾歡迎。</p>
+                                    <p>深焙（full city roast）：苦味比酸味強，餘味回甘，香氣飽滿，多用來做冰咖啡或黑咖啡。</p>
+                                    <p>法式烘焙（French roast）：苦味濃、味道強烈，沒什麼酸味，帶有煙熏香氣。</p>
+                                    <p>重焙（Italian roast）：豆子表面有油光，苦味強，有焦味，主要用來做義式濃縮咖啡。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- main end -->
+
+        <!-- footer start     -->
+        <footer class="footer">
+            <div class="ftBox_one">
+                <div class="flogo"><a href="index.html"><img src="image/coffee_one(white).svg"></a></div>
+                <div class="social">
+                    <span class="icon"><a @click.prevent="" href=""><img src="image/ft_fackbook(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_twitter(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_LINE(white).svg"></a></span>
+                </div>
+            </div>
+
+            <div class="ftBox_two">
+                <div class="fTitle">
+                    <ul :class="{'move': jump}" id="menu">
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="story.html">{{story}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" href="">{{dessert}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" href="">{{know}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" href="">{{about}}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="terms">
+                    <ul>
+                        <li><a @click.prevent="" href="">{{terms}}</a></li>
+                        <li><a @click.prevent="" href="">{{privacy}}</a></li>
+                        <li>{{Best}}</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+       
+        <!-- animated start -->
+        <div class="cover">
+            <div class="mask">
+                <div class="bottle">
+                    <div class="juice"></div>
+                    <div class="coffee"></div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="txtbox" id="txtbox">
+            <p>Knowledge</p>
+        </div>
+       
+        <div class="triangleBox" :class="{'jumpTo': isTransform}">
+            <div class="triangle tri1"></div>
+            <div class="triangle tri2"></div>
+            <div class="triangle tri3"></div>
+            <div class="triangle tri4"></div>
+            <div class="triangle tri5"></div>
+            <div class="triangle tri6"></div>
+            <div class="triangle tri7"></div>
+            <div class="triangle tri8"></div>
+            <div class="triangle tri9"></div>
+            <div class="triangle tri10"></div>
+            <div class="triangle tri11"></div>
+            <div class="triangle tri12"></div>
+            <div class="triangle tri13"></div>
+            <div class="triangle tri14"></div>
+            <div class="triangle tri15"></div>
+            <div class="triangle tri16"></div>
+            <div class="triangle tri17"></div>
+            <div class="triangle tri18"></div>
+        </div>
+        <!-- animated end -->
+    </div>
+    
+    <div id="gotop"><i class="fas fa-arrow-alt-circle-up"></i></div>
+   
+    
+<script src="js/vue.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/knowledge.js"></script>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        story: '品牌故事',
+        dessert: '店內餐點',
+        know: '咖啡知識',
+        about: '聯絡我們',
+        Knowledge: 'Knowledge',
+        aroma: '來自咖啡的烘焙',
+        terms: '網站使用條款',
+        privacy: '隱私權政策',
+        Best: '©2019 Best All Rights Reserved.',
+        isTransform: false,
+        jump: false,
+    },
+    methods:{
+        jumper(e){
+          var jump = e.target.getAttribute('href');
+          console.log(jump);
+          setTimeout(function(){
+            document.location.href = jump;
+          },1000);
+        }
+    }
+});
+
+</script>
+</body>
+</html>

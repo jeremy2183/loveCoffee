@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="./css/jump.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>About</title>
+</head>
+<body>
+    <div id="app" class="wrap">
+        <!-- header start -->
+        <header class="header">
+            <div class="logo wow fadeInDown"><a href="index.html"><img src="./image/Coffee_one.svg" alt="CoffeeSVG"></a></div>
+            <nav class="navbar">
+                <input type="checkbox" name="" id="menu-check" v-model="jump">
+                <label for="menu-check"></label>
+                <div class="black"></div>
+                <ul class="menu" :class="{'move': jump}" id="menu">
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="Story.html" data-hovertext="Story">{{story}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" data-hovertext="Dessert">{{dessert}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" data-hovertext="knowledge">{{know}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" data-hovertext="About us">{{about}}</a></li>
+                    <div class="share">
+                        <span class="icon"><img src="image/facebook.svg" alt="FB"></span>
+                        <span class="icon"><img src="image/twitter.svg" alt="twitter"></span>
+                        <span class="icon"><img src="image/line.svg" alt="Line"></span>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <!-- header end -->
+        
+        <!-- bg start -->
+        <section class="bg">
+            <figure>
+                <img src="image/banner/banner16.jpg" alt="story">
+            </figure>
+        </section>
+        <!-- bg end -->
+
+        <!-- main start -->
+        <section>
+            <div class="news">
+                <div>
+                    <h3>最新優惠 News</h3>
+                    <marquee scrollamount="3" onMouseOver="this.stop()" onMouseOut="this.start()">咖啡界的女神飲品 - 奶酒拿鐵</marquee>
+                </div>
+            </div>
+            <div class="mainArea">
+                <div class="mainBox">
+                    <h1 class="best">聯絡{{best}}</h1>
+                    <div class="content">
+                        <div class="connecBox">
+                            <div class="info">
+                                <div class="item">
+                                    <div class="icon icon1">
+                                        <i class="fas fa-home fa-2x"></i>
+                                    </div>
+                                    <p>{{home}}</p>
+                                </div>
+                                <div class="item">
+                                    <div class="icon icon2">
+                                        <i class="fa fa-phone fa-2x"></i>
+                                    </div>
+                                    <p>{{phone}}</p>
+                                </div>
+                                <div class="item">
+                                    <div class="icon icon3">
+                                        <i class="far fa-envelope fa-2x"></i>
+                                    </div>
+                                    <p>{{mail}}</p>
+                                </div>
+                                <div class="item">
+                                    <div class="icon icon4">
+                                        <a href="www.facebook.com"><i class="fab fa-facebook-square fa-2x"></i></a>
+                                    </div>
+                                    <p>{{face}}</p>
+                                </div>
+                                <div class="item">
+                                    <div class="icon icon5">
+                                        <i class="far fa-clock fa-2x"></i>
+                                    </div>
+                                    <p>{{clock}}</p>
+                                </div>
+                            </div>
+                            <div class="map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4557.092973513318!2d121.18920516710465!3d24.96723769629486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z6LOH562W5pyD5Lit5aOiIFRpYmFNZSDlnIvpmpvkurrmiY3nmbzlsZXkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1511686502290" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="addressBox">
+                            <div class="add_pic">
+                                <figure>
+                                    <img src="image/map.png">
+                                </figure>
+                            </div>
+                            <div class="add_txt">
+                                <h2>{{arrival}}</h2>
+                                <div class="item">
+                                    <div class="icon">
+                                        <i class="far fa-circle fa-2x" ></i>
+                                    </div>
+                                    <p>高鐵:轉乘台鐵六家支線火車至新竹火車站，再至SOGO站前店轉乘Big City免費接駁車抵達。</p>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <i class="far fa-circle fa-2x" ></i>
+                                    </div>
+                                    <p>市區公車:搭乘50、51路免費公車至民生中央路口站下車。</p>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <i class="far fa-circle fa-2x" ></i>
+                                    </div>
+                                    <p>國道1號高速公路:下新竹交流道95公里處出口→光復路往市區方向→右轉東光路直行過東光橋→自由路左轉中央路直行即可抵達。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="messageBox">
+                            <h2>{{message}}</h2>
+                            <div class="mess_txt">
+                                <div class="name"><label>{{name}}</label><input type="text"></div>
+                                <div class="tel"><label>{{tel}}</label><input type="tel"></div>
+                                <div class="email"><label>{{email}}</label><input type="email"></div>
+                                <div class="message"><label>{{message}}</label><textarea rows="5"></textarea></div>
+                                <button class="wow wobble"><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html">送出</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="ftBox_one">
+                <div class="flogo"><a href="index.html"><img src="image/coffee_one(white).svg"></a></div>
+                <div class="social">
+                    <span class="icon"><a @click.prevent="" href=""><img src="image/ft_fackbook(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_twitter(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_LINE(white).svg"></a></span>
+                </div>
+            </div>
+
+            <div class="ftBox_two">
+                <div class="fTitle">
+                    <ul :class="{'move': jump}" id="menu">
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="story.html">{{story}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" href="">{{dessert}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" href="">{{know}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" href="">{{about}}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="terms">
+                    <ul>
+                        <li><a @click.prevent="" href="">{{terms}}</a></li>
+                        <li><a @click.prevent="" href="">{{privacy}}</a></li>
+                        <li>{{Best}}</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+       
+        <!-- animated start -->
+        <div class="cover">
+            <div class="mask">
+                <div class="bottle">
+                    <div class="juice"></div>
+                    <div class="coffee"></div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="txtbox" id="txtbox">
+            <p>About</p>
+        </div>
+       
+        <div class="triangleBox" :class="{'jumpTo': isTransform}">
+            <div class="triangle tri1"></div>
+            <div class="triangle tri2"></div>
+            <div class="triangle tri3"></div>
+            <div class="triangle tri4"></div>
+            <div class="triangle tri5"></div>
+            <div class="triangle tri6"></div>
+            <div class="triangle tri7"></div>
+            <div class="triangle tri8"></div>
+            <div class="triangle tri9"></div>
+            <div class="triangle tri10"></div>
+            <div class="triangle tri11"></div>
+            <div class="triangle tri12"></div>
+            <div class="triangle tri13"></div>
+            <div class="triangle tri14"></div>
+            <div class="triangle tri15"></div>
+            <div class="triangle tri16"></div>
+            <div class="triangle tri17"></div>
+            <div class="triangle tri18"></div>
+        </div>
+        <!-- animated end -->
+    </div>
+    
+    <div id="gotop"><i class="fas fa-arrow-alt-circle-up"></i></div>
+   
+    
+<script src="js/vue.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/about.js"></script>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        story: '品牌故事',
+        dessert: '店內餐點',
+        know: '咖啡知識',
+        about: '聯絡我們',
+        best: 'Best',
+        home: '320桃園市中壢區中大路300號',
+        phone: '03-425-7387',
+        mail: 'best@gmail.com',
+        face: 'www.facebook.com',
+        clock: '平日:1100-2130 / 假日:1100-2200',
+        arrival: '到達方式',
+        message: '留言',
+        name: '姓名',
+        tel: '電話',
+        email: 'email',
+        terms: '網站使用條款',
+        privacy: '隱私權政策',
+        Best: '©2019 Best All Rights Reserved.',
+        isTransform: false,
+        jump: false,
+    },
+    methods:{
+        jumper(e){
+          var jump = e.target.getAttribute('href');
+          console.log(jump);
+          setTimeout(function(){
+            document.location.href = jump;
+          },1000);
+        }
+    }
+});
+
+</script>
+</body>
+</html>

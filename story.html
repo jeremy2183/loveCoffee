@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/story.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="./css/jump.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Story</title>
+</head>
+<body>
+    <div id="app" class="wrap">
+        <!-- header start -->
+        <header class="header">
+            <div class="logo wow fadeInDown"><a href="index.html"><img src="./image/Coffee_one.svg" alt="CoffeeSVG"></a></div>
+            <nav class="navbar">
+                <input type="checkbox" name="" id="menu-check" v-model="jump">
+                <label for="menu-check"></label>
+                <div class="black"></div>
+                <ul class="menu" :class="{'move': jump}" id="menu">
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="Story.html" data-hovertext="Story">{{story}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" data-hovertext="Dessert">{{dessert}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" data-hovertext="knowledge">{{know}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" data-hovertext="About us">{{about}}</a></li>
+                    <div class="share">
+                        <span class="icon"><img src="image/facebook.svg" alt="FB"></span>
+                        <span class="icon"><img src="image/twitter.svg" alt="twitter"></span>
+                        <span class="icon"><img src="image/line.svg" alt="Line"></span>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <!-- header end -->
+        
+        <!-- bg start -->
+        <section class="bg">
+            <figure>
+                <img src="image/banner/banner13.jpg" alt="story">
+            </figure>
+        </section>
+        <!-- bg end -->
+
+        <!-- main start-->
+        <section>
+            <div class="news">
+                <div>
+                    <h3>最新優惠 News</h3>
+                     <marquee scrollamount="3" onMouseOver="this.stop()" onMouseOut="this.start()">咖啡界的女神飲品 - 奶酒拿鐵</marquee>
+                </div>
+            </div>
+            <div class="mainArea">
+                <div class="mainBox">
+                    <!-- titleBox start -->
+                    <div class="titleBox">
+                        <h2 class="brand">
+                            <em>{{stories}}</em>
+                            <strong>{{brand}}</strong>
+                        </h2>
+                        <div class="side_menu">
+                            <ul>
+                                <li><a :class="{'active': link == 'story'}" @click.prevent="link = 'story'" href="#">{{story}}</a></li>
+                                <li><a :class="{'active': link == 'spirit'}" @click.prevent="link = 'spirit'" href="#">{{spirit}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- titleBox end -->
+                    <!-- storyBox start -->
+                    <div class="storyBox">
+                        <div class="content">
+                            <!-- boxA start -->
+                            <div class="boxA" v-if="link == 'story'">
+                                <h3>
+                                    <strong>{{story}}</strong>
+                                </h3>
+                                <figure>
+                                    <img src="image/bg/story2.png" alt="storyPic">
+                                </figure>
+                                <div class="storyText">
+                                    <p class="wow fadeInUp">咖啡，是豐沃土壤的產物，孕育著美好</p>
+                                    <p class="wow fadeInUp">咖啡，是生活中對自己的犒賞，更代表了個人品味的象徵</p><br>
+                                    <p class="wow fadeInUp">因為有相同的喜好與執著，所以我們相遇</p>
+                                    <p class="wow fadeInUp">來到這裡，希望提供您片刻的享受，然後持續下去</p>
+                                </div>
+
+                                <div class="group">
+                                    <figure class="wow fadeInUp">
+                                        <img src="image/coffee/girl6.jpg">
+                                    </figure>
+                                    <div class="txt wow fadeInUp">
+                                        <div>
+                                            <h4>Share Taste.</h4>
+                                            <span>體驗分享</span>
+                                        </div>
+                                        <p>不管您是第幾次來到這裡</p>
+                                        <p>都會有初次相遇的驚豔</p>
+                                        <p>請用心感受與體驗</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <figure class="wow fadeInUp">
+                                        <img src="image/coffee/girl8.jpg">
+                                    </figure>
+                                    <div class="txt wow fadeInUp">
+                                        <div >
+                                            <h4>Loving Service.</h4>
+                                            <span>服務熱誠</span>
+                                        </div>
+                                        <p >秉持一顆熱誠的心</p>
+                                        <p>滿足您內心的期待與想像</p>
+                                        <p>藉由對咖啡的渴望，讓彼此更靠近</p>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <figure class="wow fadeInUp">
+                                        <img src="image/coffee/girl7.jpg">
+                                    </figure>
+                                    <div class="txt wow fadeInUp">
+                                        <div>
+                                            <h4>Enjoying Best.</h4>
+                                            <span>享受貝斯特</span>
+                                        </div>
+                                        <p>與我們一起分享對咖啡的熱愛</p>
+                                        <p>希望您也能愛上貝斯特咖啡</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- boxA end -->
+                            <!-- boxB start -->
+                            <div class="boxB" v-else-if="link == 'spirit'">
+                                <h3>
+                                    <strong>{{spirit}}</strong>
+                                </h3>
+                                <figure>
+                                    <img src="image/coffee/spirit.jpg" alt="spiritPic">
+                                </figure>
+                                <div class="spiritBox">
+                                    <div class="item original">
+                                        <div class="origi_pic">
+                                            <figure>
+                                                <img class="mobiP" src="image/coffee/coffee3.png" alt="originalPic">
+                                                <img class="mobiPic wow fadeInUp" src="image/banner/banner28.jpg">
+                                            </figure>
+                                        </div>
+                                        <div class="spiritTxt text">
+                                            <h4>從「豆」開始</h4>
+                                            <div class="txt1">
+                                                <p>烘豆師產地親自挑選生豆</p>
+                                                <p>24hr恆溫恆溼環境控管</p>
+                                                <p>通過HACCP食品安全認證的烘豆廠</p>
+                                            </div>
+                                            <div class="txt2">
+                                                <p>堅持淺中的烘培度</p>
+                                                <p>保留咖啡豆最純萃的原味</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item quality">
+                                        <div class="qualiTxt text">
+                                            <h4>職人靈魂始</h4>
+                                            <div class="txt1">
+                                                <p>萃取秒數差一秒都不行，堅持好品質</p>
+                                                <p>滿滿的熱誠呈現於雙手端出的每一杯咖啡，從溫度、咖啡豆的克數、萃取的秒數，嚴格的串聯出百分百的完美</p>
+                                            </div>
+                                            <div class="txt2">
+                                                <p>從第一杯到未來的每一杯</p>
+                                                <p>每天開門的那一刻</p>
+                                                <p>都再次確認了記憶中的美好</p>
+                                            </div>
+                                        </div>
+                                        <div class="quali_pic">
+                                            <figure>
+                                                <img class="mobiP" src="image/coffee/coffee4.png" alt="qualiPic">
+                                                <img class="mobiPic wow fadeInUp" src="image/banner/banner11.jpg">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div class="item happiness">
+                                        <div class="happi_pic">
+                                             <figure>
+                                                <img class="mobiP" src="image/coffee/coffee5.png" alt="happiPic">
+                                                <img class="mobiPic wow fadeInUp" src="image/banner/banner4.jpg" >
+                                            </figure>
+                                        </div>
+                                        <div class="happiTxt text">
+                                            <h4>貝斯特 您好!</h4>
+                                            <p>美好的記憶，來自於品嚐的片刻。</p>
+                                            <div class="txt1">
+                                                <p>一杯原萃熱情，</p>
+                                                <p>一個暖意問候。</p>
+                                                <p>幸福，在貝斯特是如此簡單純粹。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- boxB end -->
+                        </div>
+                    </div>
+                    <!-- storyBox end -->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="ftBox_one">
+                <div class="flogo"><a href="index.html"><img src="image/coffee_one(white).svg"></a></div>
+                <div class="social">
+                    <span class="icon"><a @click.prevent="" href=""><img src="image/ft_fackbook(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_twitter(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_LINE(white).svg"></a></span>
+                </div>
+            </div>
+
+            <div class="ftBox_two">
+                <div class="fTitle">
+                    <ul :class="{'move': jump}" id="menu">
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="story.html">{{story}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" href="">{{dessert}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" href="">{{know}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" href="">{{about}}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="terms">
+                    <ul>
+                        <li><a @click.prevent="" href="">{{terms}}</a></li>
+                        <li><a @click.prevent="" href="">{{privacy}}</a></li>
+                        <li>{{Best}}</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+       
+        <!-- coffeeAnimated start -->
+        <div class="cover">
+            <div class="mask">
+                <div class="bottle">
+                    <div class="juice"></div>
+                    <div class="coffee"></div>
+                </div>
+            </div> 
+        </div>
+        
+        <div class="txtbox" id="txtbox">
+            <p>Story</p>
+        </div>
+       
+        <div class="triangleBox" :class="{'jumpTo': isTransform}">
+            <div class="triangle tri1"></div>
+            <div class="triangle tri2"></div>
+            <div class="triangle tri3"></div>
+            <div class="triangle tri4"></div>
+            <div class="triangle tri5"></div>
+            <div class="triangle tri6"></div>
+            <div class="triangle tri7"></div>
+            <div class="triangle tri8"></div>
+            <div class="triangle tri9"></div>
+            <div class="triangle tri10"></div>
+            <div class="triangle tri11"></div>
+            <div class="triangle tri12"></div>
+            <div class="triangle tri13"></div>
+            <div class="triangle tri14"></div>
+            <div class="triangle tri15"></div>
+            <div class="triangle tri16"></div>
+            <div class="triangle tri17"></div>
+            <div class="triangle tri18"></div>
+        </div>
+        <!-- coffeeAnimated end -->
+    </div>
+    
+    <div id="gotop"><i class="fas fa-arrow-alt-circle-up"></i></div>
+   
+    
+<script src="js/vue.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/story.js"></script>
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        story: '品牌故事',
+        dessert: '店內餐點',
+        know: '咖啡知識',
+        about: '聯絡我們',
+        spirit: '品牌精神',
+        stories: 'Brand Stories',
+        brand: '品牌故事',
+        info: '咖啡，是生活中對自己的犒賞，更代表了個人品味的象徵',
+        feature: 'Feature Product',
+        us: '聯絡我們',
+        terms: '網站使用條款',
+        privacy: '隱私權政策',
+        Best: '©2019 Best All Rights Reserved.',
+        isTransform: false,
+        jump: false,
+        link: 'story',
+    },
+    methods:{
+        jumper(e){
+          var jump = e.target.getAttribute('href');
+          console.log(jump);
+          setTimeout(function(){
+            document.location.href = jump;
+          },1000);
+        }
+    }
+});
+
+</script>
+</body>
+</html>

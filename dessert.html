@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/dessert.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="./css/jump.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Dessert</title>
+</head>
+<body>
+    <div id="app" class="wrap">
+        <!-- header start -->
+        <header class="header">
+            <div class="logo wow fadeInDown"><a href="index.html"><img src="./image/Coffee_one.svg" alt="CoffeeSVG"></a></div>
+            <nav class="navbar">
+                <input type="checkbox" name="" id="menu-check" v-model="jump">
+                <label for="menu-check"></label>
+                <div class="black"></div>
+                <ul class="menu" :class="{'move': jump}" id="menu">
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="Story.html" data-hovertext="Story">{{story}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" data-hovertext="Dessert">{{dessert}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" data-hovertext="knowledge">{{know}}</a></li>
+                    <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" data-hovertext="About us">{{about}}</a></li>
+                    <div class="share">
+                        <span class="icon"><img src="image/facebook.svg" alt="FB"></span>
+                        <span class="icon"><img src="image/twitter.svg" alt="twitter"></span>
+                        <span class="icon"><img src="image/line.svg" alt="Line"></span>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <!-- header end -->
+        
+        <!-- bg start -->
+        <section class="bg">
+            <figure>
+                <img src="image/banner/banner20.jpg" alt="story">
+            </figure>
+        </section>
+        <!-- bg end -->
+
+        <!-- main start -->
+        <section>
+            <div class="news">
+                <div>
+                    <h3>最新優惠 News</h3>
+                    <marquee scrollamount="3" onMouseOver="this.stop()" onMouseOut="this.start()">咖啡界的女神飲品 - 奶酒拿鐵</marquee>
+                </div>
+            </div>
+            <div class="mainArea">
+                <div class="mainBox">
+                    <div class="titleBox">
+                        <h2 class="dessert">
+                            <em>{{product}}</em>
+                            <strong>{{dessert}}</strong>
+                        </h2>
+                        <div class="side_menu">
+                            <div class="present">
+                                <h4><a @click.prevent="link = 'newProd'" href="#">{{newProd}}</a></h4>
+                            </div>
+                            <div class="present">
+                                <h4 class="drink">{{drink}}</h4>
+                                <div class="prod">
+                                    <ul>
+                                        <li><a :class="{'active': link == 'wine'}" @click.prevent="link = 'wine'" href="#">{{wineCoffee}}</a></li>
+                                        <li><a :class="{'active': link == 'hotCoffee'}" @click.prevent="link = 'hotCoffee'" href="#">{{hotCoffee}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="present">
+                                <h4 class="foot">{{foot}}</h4>
+                                <div class="prod">
+                                    <ul>
+                                        <li><a :class="{'active': link == 'lunch'}" @click.prevent="link = 'lunch'" href="#">{{lunch}}</a></li>
+                                        <li><a :class="{'active': link == 'dinner'}" @click.prevent="link = 'dinner'" href="#">{{dinner}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="present">
+                                <h4><a @click.prevent="" href="#">{{peri}}</a></h4>
+                            </div>
+                            <!-- <div class="clearfix"></div> -->
+                        </div>
+                    </div>
+                    <div class="dessertBox">
+                        <div class="content">
+                            <div class="newProd" v-if="link == 'newProd'">
+                                <h3>{{newProd}}</h3>
+                                <div class="prod_box">
+                                    <prod-slot-component></prod-slot-component>
+                                    <food-slot-component></food-slot-component>
+                                    <div is="prod-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure">
+                                            <img src="image/product/new/Belgian Waffle.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>比利時鬆餅</span>
+                                            <span>Belgian Waffle</span>
+                                        </span>
+                                        <h4 slot="name">比利時鬆餅</h4>
+                                        <p slot="coffee">Belgian Waffle</p>
+                                        <span slot="money">$ 65</span>
+                                    </div>
+                                    <div is="prod-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure">
+                                            <img src="image/product/new/Wild Mushroom.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>什錦野菇燉飯</span>
+                                            <span>Risotto Mushroom</span>
+                                        </span>
+                                        <h4 slot="name">什錦野菇燉飯</h4>
+                                        <p slot="coffee">Risotto Mushroom</p>
+                                        <span slot="money">$ 110</span>
+                                    </div>
+                                    <div is="prod-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure">
+                                            <img src="image/product/new/Garlic Sauce.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>茄汁牛肉燉飯</span>
+                                            <span>Risotto with Beef</span>
+                                        </span>
+                                        <h4 slot="name">茄汁牛肉燉飯</h4>
+                                        <p slot="coffee">Risotto with Beef</p>
+                                        <span slot="money">$ 130</span>
+                                    </div>
+                                    <div is="prod-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure">
+                                            <img src="image/product/new/Toasted Pineapple.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>巧克力菠蘿(冰)</span>
+                                            <span>Chocolate and Ice</span>
+                                        </span>
+                                        <h4 slot="name">巧克力菠蘿(冰)</h4>
+                                        <p slot="coffee">Chocolate and Ice</p>
+                                        <span slot="money">$ 70</span>
+                                    </div>
+                                    <div is="prod-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure">
+                                            <img src="image/product/new/Corn Flakes.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>蜂蜜奶油菠蘿</span>
+                                            <span>Honey Cream</span>
+                                        </span>
+                                        <h4 slot="name">蜂蜜奶油菠蘿</h4>
+                                        <p slot="coffee">Honey Cream</p>
+                                        <span slot="money">$ 70</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newProd" v-else-if="link == 'wine'">
+                                <h3>{{drink}}</h3>
+                                <div class="prod_box">
+                                    <div is="wine-slot-component">
+                                        <figure class="fig wow fadeInUp" slot="figure3">
+                                            <img src="image/product/wineCoffee/chocolate.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>奶酒可可</span>
+                                            <span>Liqueur Chocolate</span>
+                                        </span>
+                                        <h4 slot="name">奶酒可可</h4>
+                                        <p slot="coffee">Liqueur Chocolate</p>
+                                        <span slot="money">$ 105</span>
+                                    </div>
+                                    <div is="wine-slot-component">
+                                        <figure class="fig wow fadeInUp" slot="figure3">
+                                            <img src="image/product/wineCoffee/latte.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>奶酒拿鐵</span>
+                                            <span>Liqueur Latte</span>
+                                        </span>
+                                        <h4 slot="name">奶酒拿鐵</h4>
+                                        <p slot="coffee">Liqueur Latte</p>
+                                        <span slot="money">$ 105</span>
+                                    </div>
+                                    <div is="wine-slot-component">
+                                        <figure class="fig3 wow fadeInUp" slot="figure3">
+                                            <img src="image/product/wineCoffee/kavalan.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>KAVALAN咖啡</span>
+                                            <span>KAVALAN Coffee</span>
+                                        </span>
+                                        <h4 slot="name">KAVALAN咖啡</h4>
+                                        <p slot="coffee">KAVALAN Coffee</p>
+                                        <span slot="money">$ 95</span>
+                                    </div>
+                                    <div is="wine-slot-component">
+                                        <figure class="fig4 wow fadeInUp" slot="figure3">
+                                            <img src="image/product/wineCoffee/whisky.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>杏仁醇品拿鐵</span>
+                                            <span>Almond Latte</span>
+                                        </span>
+                                        <h4 slot="name">杏仁醇品拿鐵</h4>
+                                        <p slot="coffee">Almond Latte</p>
+                                    </div>
+                                    <div is="wine-slot-component">
+                                        <figure class="fig3 wow fadeInUp" slot="figure3">
+                                            <img src="image/product/wineCoffee/caramel.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>焦糖醇麥拿鐵</span>
+                                            <span>Caramel Latte</span>
+                                        </span>
+                                        <h4 slot="name">焦糖醇麥拿鐵</h4>
+                                        <p slot="coffee">Caramel Latte</p>
+                                        <span slot="money">$ 95</span>
+                                    </div>
+                                    <div is="wine-slot-component">
+                                        <figure class="fig wow fadeInUp" slot="figure3">
+                                            <img src="image/product/wineCoffee/whiskyIce.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>馥郁冰淇淋</span>
+                                            <span>Whisky Ice Cream</span>
+                                        </span>
+                                        <h4 slot="name">馥郁冰淇淋</h4>
+                                        <p slot="coffee">Whisky Ice Cream</p>
+                                        <span slot="money">$ 110</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newProd" v-if="link == 'hotCoffee'">
+                                <h3>{{drink}}</h3>
+                                <div class="prod_box">
+                                    <div is="food-slot-component">
+                                        <figure class="fig3 wow fadeInUp" slot="figure2">
+                                            <img src="image/product/coffee/mocha.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>花式摩卡</span>
+                                            <span>Cafe Mocha</span>
+                                        </span>
+                                        <h4 slot="name">花式摩卡</h4>
+                                        <p slot="coffee">Cafe Mocha</p>
+                                        <span slot="money">$ 95</span>
+                                    </div>
+                                    <div is="food-slot-component">
+                                        <figure class="fig4 wow fadeInUp" slot="figure2">
+                                            <img src="image/product/coffee/Cappuccino.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>卡布其諾</span>
+                                            <span>Cappuccino</span>
+                                        </span>
+                                        <h4 slot="name">卡布其諾</h4>
+                                        <p slot="coffee">Cappuccino</p>
+                                    </div>
+                                    <div is="food-slot-component">
+                                        <figure class="fig3 wow fadeInUp" slot="figure2">
+                                            <img src="image/product/coffee/vienna.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>維也納咖啡</span>
+                                            <span>Vienna Coffee</span>
+                                        </span>
+                                        <h4 slot="name">維也納咖啡</h4>
+                                        <p slot="coffee">Vienna Coffee</p>
+                                    </div>
+                                    <div is="food-slot-component">
+                                        <figure class="fig3 wow fadeInUp" slot="figure2">
+                                            <img src="image/product/coffee/americano.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>美式咖啡</span>
+                                            <span>Cafe Americano</span>
+                                        </span>
+                                        <h4 slot="name">美式咖啡</h4>
+                                        <p slot="coffee">Cafe Americano</p>
+                                    </div>
+                                    <div is="food-slot-component">
+                                        <figure class="fig3 wow fadeInUp" slot="figure2">
+                                            <img src="image/product/coffee/of-the-day.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>本日咖啡</span>
+                                            <span>Cafe of the Day</span>
+                                        </span>
+                                        <h4 slot="name">本日咖啡</h4>
+                                        <p slot="coffee">Cafe of the Day</p>
+                                    </div>
+                                    <div is="food-slot-component">
+                                        <figure class="fig5 wow fadeInUp" slot="figure2">
+                                            <img src="image/product/coffee/espresso.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>義式濃縮咖啡</span>
+                                            <span>Espresso</span>
+                                        </span>
+                                        <h4 slot="name">義式濃縮咖啡</h4>
+                                        <p slot="coffee">Espresso</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newProd" v-if="link == 'lunch'">
+                                <h3>{{foot}}</h3>
+                                <div class="prod_box">
+                                    <div is="lunch-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure4">
+                                            <img src="image/product/lunch/Beef with Peanut.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>菇菇花生牛肉堡</span>
+                                            <span>Beef with Peanut</span>
+                                        </span>
+                                        <h4 slot="name">菇菇花生牛肉堡</h4>
+                                        <p slot="coffee">Beef with Peanut</p>
+                                        <span slot="money">$ 120</span>
+                                    </div>
+                                    <div is="lunch-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure4">
+                                            <img src="image/product/lunch/toast.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>焗烤厚片</span>
+                                            <span>Cheese Toast</span>
+                                        </span>
+                                        <h4 slot="name">焗烤厚片</h4>
+                                        <p slot="coffee">Cheese Toast</p>
+                                        <span slot="money">$ 60</span>
+                                    </div>
+                                    <div is="lunch-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure4">
+                                            <img src="image/product/lunch/multi grain.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>雜糧三明治</span>
+                                            <span>Grain Sandwich</span>
+                                        </span>
+                                        <h4 slot="name">雜糧三明治</h4>
+                                        <p slot="coffee">Grain Sandwich</p>
+                                        <span slot="money">$ 70</span>
+                                    </div>
+                                    <div is="lunch-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure4">
+                                            <img src="image/product/lunch/Rosated Chicken.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>蜂蜜芥末雞總匯</span>
+                                            <span>Grain Sandwich</span>
+                                        </span>
+                                        <h4 slot="name">蜂蜜芥末雞總匯</h4>
+                                        <p slot="coffee">Grain Sandwich</p>
+                                        <span slot="money">$ 70</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newProd" v-if="link == 'dinner'">
+                                <h3>{{foot}}</h3>
+                                <div class="prod_box">
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Risotto with Mixed Wild Mushroom.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>什錦野菇燉飯</span>
+                                            <span>Risotto Mushroom</span>
+                                        </span>
+                                        <h4 slot="name">什錦野菇燉飯</h4>
+                                        <p slot="coffee">Risotto Mushroom</p>
+                                        <span slot="money">$ 120</span>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Risotto with Beef in Tomato and Garlic Sauce.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>茄汁牛肉燉飯</span>
+                                            <span>Risotto with Beef</span>
+                                        </span>
+                                        <h4 slot="name">茄汁牛肉燉飯</h4>
+                                        <p slot="coffee">Risotto with Beef</p>
+                                        <span slot="money">$ 130</span>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Sefood & Fried Party Platter.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>超值海陸拼盤</span>
+                                            <span>Fried Party Platter</span>
+                                        </span>
+                                        <h4 slot="name">超值海陸拼盤</h4>
+                                        <p slot="coffee">Fried Party Platter</p>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Roasted Party Platter & Salad.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>烤物沙拉拼盤</span>
+                                            <span>Roasted Party Platter</span>
+                                        </span>
+                                        <h4 slot="name">烤物沙拉拼盤</h4>
+                                        <p slot="coffee">Roasted Party Platter</p>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Fried Party Platter.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>滿足炸物拼盤</span>
+                                            <span>Fried Party Platter</span>
+                                        </span>
+                                        <h4 slot="name">滿足炸物拼盤</h4>
+                                        <p slot="coffee">Fried Party Platter</p>
+                                        <span slot="money">$ 220</span>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Little Platter.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>小雙拼</span>
+                                            <span>Little Platter</span>
+                                        </span>
+                                        <h4 slot="name">小雙拼</h4>
+                                        <p slot="coffee">Little Platter</p>
+                                        <span slot="money">$ 200</span>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/warm salad.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>照燒豬肉溫沙拉</span>
+                                            <span>Potato Warm Salad</span>
+                                        </span>
+                                        <h4 slot="name">照燒豬肉溫沙拉</h4>
+                                        <p slot="coffee">Potato Warm Salad</p>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/Grilled Pork Chop with Basil.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>羅勒茄烤豬排</span>
+                                            <span>Grilled Pork Chop</span>
+                                        </span>
+                                        <h4 slot="name">羅勒茄烤豬排</h4>
+                                        <p slot="coffee">Grilled Pork Chop</p>
+                                        <span slot="money">$ 200</span>
+                                    </div>
+                                    <div is="dinner-slot-component">
+                                        <figure class="fig2 wow fadeInUp" slot="figure5">
+                                            <img src="image/product/dinner/chickensalad.png">
+                                        </figure>
+                                        <span class="mask" slot="mask">
+                                            <span>煙燻雞肉沙拉</span>
+                                            <span>Somked Salad</span>
+                                        </span>
+                                        <h4 slot="name">煙燻雞肉沙拉</h4>
+                                        <p slot="coffee">Somked Salad</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <footer class="footer">
+            <div class="ftBox_one">
+                <div class="flogo"><a href="index.html"><img src="image/coffee_one(white).svg"></a></div>
+                <div class="social">
+                    <span class="icon"><a @click.prevent="" href=""><img src="image/ft_fackbook(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_twitter(white).svg"></a></span>
+                    <span class="icont"><a @click.prevent="" href=""><img src="image/ft_LINE(white).svg"></a></span>
+                </div>
+            </div>
+
+            <div class="ftBox_two">
+                <div class="fTitle">
+                    <ul :class="{'move': jump}" id="menu">
+                        <li><a @click.prevent="jumper" @click="isTransform = !isTransform" href="story.html">{{story}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="dessert.html" href="">{{dessert}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="knowledge.html" href="">{{know}}</a></li>
+                        <li><a a @click.prevent="jumper" @click="isTransform = !isTransform" href="about.html" href="">{{about}}</a></li>
+                    </ul>
+                </div>
+                
+                <div class="terms">
+                    <ul>
+                        <li><a @click.prevent="" href="">{{terms}}</a></li>
+                        <li><a @click.prevent="" href="">{{privacy}}</a></li>
+                        <li>{{Best}}</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- animated start -->
+        <div class="cover">
+            <div class="mask">
+                <div class="bottle">
+                    <div class="juice"></div>
+                    <div class="coffee"></div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="txtbox" id="txtbox">
+            <p>Dessert</p>
+        </div>
+       
+        <div class="triangleBox" :class="{'jumpTo': isTransform}">
+            <div class="triangle tri1"></div>
+            <div class="triangle tri2"></div>
+            <div class="triangle tri3"></div>
+            <div class="triangle tri4"></div>
+            <div class="triangle tri5"></div>
+            <div class="triangle tri6"></div>
+            <div class="triangle tri7"></div>
+            <div class="triangle tri8"></div>
+            <div class="triangle tri9"></div>
+            <div class="triangle tri10"></div>
+            <div class="triangle tri11"></div>
+            <div class="triangle tri12"></div>
+            <div class="triangle tri13"></div>
+            <div class="triangle tri14"></div>
+            <div class="triangle tri15"></div>
+            <div class="triangle tri16"></div>
+            <div class="triangle tri17"></div>
+            <div class="triangle tri18"></div>
+        </div>
+        <!-- animated end -->
+    </div>
+    
+    <div id="gotop"><i class="fas fa-arrow-alt-circle-up"></i></div>
+
+
+<!-- component start -->
+<script type="text/x-template" id="prodSlotComponent">
+    <div class="item">
+        <slot name="figure">
+            <figure class="fig wow fadeInUp">
+                <img src="image/product/new/Longan Milk.png" alt="Longan Milk">
+            </figure>
+        </slot>
+        <slot name="mask">
+            <span class="mask">
+                <span>薑糖桂圓拿鐵</span>
+                <span>Ginger Longan Milk</span>
+            </span>
+        </slot>
+        <slot name="name">
+            <h4>薑糖桂圓拿鐵</h4>
+        </slot> 
+        <slot name="coffee">
+            <p>Ginger Longan Milk</p>
+        </slot>
+        <slot name="money">
+            <span>$ 85</span>
+        </slot>
+    </div>
+</script>
+<script type="text/x-template" id="foodSlotComponent">
+    <div class="item">
+        <slot name="figure2">
+            <figure class="fig aa wow fadeInUp">
+                <img src="image/product/new/Longan-Latte.png">
+            </figure>
+        </slot>
+        <slot name="mask">
+            <span class="mask">
+                <span>薑糖桂圓牛奶</span>
+                <span>Ginger Longan Latte</span>
+            </span>
+        </slot>
+        
+        <slot name="name">
+            <h4>薑糖桂圓牛奶</h4>
+        </slot> 
+        <slot name="coffee">
+            <p>Ginger Longan Latte</p>
+        </slot>
+        <slot name="money">
+            <span>$ 85</span>
+        </slot>
+    </div>
+</script>
+<script type="text/x-template" id="wineSlotComponent">
+    <div class="item">
+        <slot name="figure3">
+            <figure class="fig aa wow fadeInUp">
+                <img src="image/product/new/Longan-Latte.png">
+            </figure>
+        </slot>
+        <slot name="mask">
+            <span class="mask">
+                <span>薑糖桂圓拿鐵</span>
+                <span>Ginger Longan Milk</span>
+            </span>
+        </slot>
+        <slot name="name">
+            <h4>薑糖桂圓牛奶</h4>
+        </slot> 
+        <slot name="coffee">
+            <p>Ginger Longan Latte</p>
+        </slot>
+        <slot name="money">
+            <span>$ 85</span>
+        </slot>
+    </div>
+</script>
+<script type="text/x-template" id="lunchSlotComponent">
+    <div class="item">
+        <slot name="figure4">
+            <figure class="fig wow fadeInUp">
+                <img src="image/product/new/Longan-Latte.png">
+            </figure>
+        </slot>
+        <slot name="mask">
+            <span class="mask">
+                <span>薑糖桂圓拿鐵</span>
+                <span>Ginger Longan Milk</span>
+            </span>
+        </slot>
+        <slot name="name">
+            <h4>薑糖桂圓牛奶</h4>
+        </slot> 
+        <slot name="coffee">
+            <p>Ginger Longan Latte</p>
+        </slot>
+        <slot name="money">
+            <span>$ 85</span>
+        </slot>
+    </div>
+</script>
+<script type="text/x-template" id="dinnerSlotComponent">
+    <div class="item">
+        <slot name="figure5">
+            <figure class="fig wow fadeInUp">
+                <img src="image/product/new/Longan-Latte.png">
+            </figure>
+        </slot>
+        <slot name="mask">
+            <span class="mask">
+                <span>薑糖桂圓拿鐵</span>
+                <span>Ginger Longan Milk</span>
+            </span>
+        </slot>
+        <slot name="name">
+            <h4>照燒豬肉溫沙拉</h4>
+        </slot> 
+        <slot name="coffee">
+            <p>Potato Warm Salad</p>
+        </slot>
+        <slot name="money">
+            <span>$ 180</span>
+        </slot>
+    </div>
+</script>
+<!-- component end -->
+    
+<script src="js/vue.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/dessert.js"></script>
+
+<script>
+Vue.component('prod-slot-component',{
+    template: '#prodSlotComponent',
+});
+
+Vue.component('wine-slot-component', {
+  template: '#wineSlotComponent',
+});
+
+Vue.component('food-slot-component', {
+  template: '#foodSlotComponent',
+});
+
+Vue.component('lunch-slot-component', {
+  template: '#lunchSlotComponent',
+});
+
+Vue.component('dinner-slot-component', {
+  template: '#dinnerSlotComponent',
+});
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        story: '品牌故事',
+        dessert: '店內餐點',
+        know: '咖啡知識',
+        about: '聯絡我們',
+        product: 'Product',
+        newProd: '最新產品',
+        drink: '飲品介紹',
+        wineCoffee: '美酒 + 咖啡系列',
+        hotCoffee: '熱咖啡系列',
+        foot: '餐點介紹',
+        lunch: '樂活早午餐',
+        dinner: '精緻午晚餐',
+        peri: '週邊商品',
+        terms: '網站使用條款',
+        privacy: '隱私權政策',
+        Best: '©2019 Best All Rights Reserved.',
+        isTransform: false,
+        jump: false,
+        link: 'newProd',
+    },
+    methods:{
+        jumper(e){
+          var jump = e.target.getAttribute('href');
+          console.log(jump);
+          setTimeout(function(){
+            document.location.href = jump;
+          },1000);
+        }
+    }
+});
+
+</script>
+</body>
+</html>
